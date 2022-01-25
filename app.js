@@ -1,17 +1,20 @@
-var greet = require("./old_greet");
+var greet = require("./greet1");
+var greet2 = require("./greet2").greet;
+
 
 greet();
-var fn = "vishnu";
-console.log(fn);
+greet2();
 
-// immediately invoked function. 
-(function () {
-  var fn = "av";
-  console.log(fn);
-}());
+var greet3 = require("./greet3");
+greet3.greet();
+greet3.greeting = "changed text";
 
-// import from greet folder
+var greet3b = require("./greet3");
+greet3b.greet();
 
-var newGreet = require('./greet');
-newGreet.english();
-newGreet.spanish();
+var Greet4 = require("./greet4");
+var grtr = new Greet4();
+grtr.greet();
+
+var Greet5 = require("./greet5");
+Greet5.greet();
